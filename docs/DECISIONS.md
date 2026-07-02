@@ -303,3 +303,45 @@ Starting with only `@ithos/core` avoids placeholder architecture and keeps Phase
 Skipping type-aware linting in Phase 1 avoids extra configuration complexity
 while the repository has only one small package. If Ithos gains more complex
 cross-package TypeScript behavior, this decision should be revisited.
+
+---
+
+# DEC-0011
+
+## Title
+
+Use Commander for the Phase 2 CLI.
+
+## Status
+
+Accepted
+
+## Context
+
+Phase 2 introduces the first usable Ithos product surface: a local CLI with
+commands for initialization, validation, recording, search and export.
+
+The CLI should be easy to understand, local-first and small enough for future
+contributors to maintain.
+
+## Alternatives Considered
+
+- Hand-rolled argument parsing
+- yargs
+- cac
+- oclif
+
+## Decision
+
+Ithos will use Commander for the Phase 2 CLI.
+
+The CLI package will live in `packages/cli` and expose an `ithos` binary.
+
+## Why
+
+Commander is mature, widely used, small enough for this phase and readable in
+source. It avoids custom parser code while staying lighter than a full CLI
+application framework.
+
+This keeps Phase 2 focused on local engineering memory workflows rather than CLI
+infrastructure.
