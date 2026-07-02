@@ -8,7 +8,7 @@ import {
   searchMemory,
   validateRepository,
   type ArtifactType
-} from "./ithos.js";
+} from "@ithos/core";
 
 export function createCli(): Command {
   const program = new Command();
@@ -38,7 +38,7 @@ export function createCli(): Command {
         return;
       }
 
-      result.errors.forEach((error) => console.error(error));
+      result.errors.forEach((error: string) => console.error(error));
       process.exitCode = 1;
     });
 
@@ -47,7 +47,7 @@ export function createCli(): Command {
     .description("Check local Ithos setup and print guidance")
     .action(async () => {
       const result = await doctorRepository();
-      result.messages.forEach((message) => console.log(message));
+      result.messages.forEach((message: string) => console.log(message));
 
       if (!result.ok) {
         process.exitCode = 1;
@@ -94,9 +94,11 @@ export function createCli(): Command {
         return;
       }
 
-      results.forEach((result) => {
-        console.log(`${result.file}:${result.line}: ${result.text}`);
-      });
+      results.forEach(
+        (result: { file: string; line: number; text: string }) => {
+          console.log(`${result.file}:${result.line}: ${result.text}`);
+        }
+      );
     });
 
   program

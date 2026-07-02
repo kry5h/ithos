@@ -1,8 +1,11 @@
 {
-  "name": "@ithos/core",
+  "name": "@ithos/mcp",
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "bin": {
+    "ithos-mcp": "./dist/bin/ithos-mcp.js"
+  },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -16,7 +19,11 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "npm run build && node --test dist/ithos.test.js",
     "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@ithos/core": "*",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.24.2"
   }
 }

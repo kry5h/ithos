@@ -8,8 +8,9 @@ import {
   initRepository,
   recordArtifact,
   searchMemory,
-  validateRepository
-} from "./ithos.js";
+  validateRepository,
+  readProjectContext
+} from "./index.js";
 
 test("initRepository creates the required Ithos files", async () => {
   const cwd = await temporaryDirectory();
@@ -148,6 +149,27 @@ test("exportMemory concatenates markdown files", async () => {
     assert.ok(result.files.includes(".ithos/project.md"));
     assert.match(result.markdown, /<!-- \.ithos\/README\.md -->/);
     assert.match(result.markdown, /<!-- \.ithos\/project\.md -->/);
+  } finally {
+    await removeDirectory(cwd);
+  }
+});
+
+test("readProjectContext returns existing readme and project content", async () => {
+  const cwd = await temporaryDirectory();
+
+  try {
+    const resultNone = await readProjectContext(cwd);
+    assert.deepEqual(resultNone, { readme: null, project: null });
+
+    await initRepository(cwd);
+    const resultInit = await readProjectContext(cwd);
+
+    assert.ok(
+      resultInit.readme !== null && resultInit.readme.includes("Ithos")
+    );
+    assert.ok(
+      resultInit.project !== null && resultInit.project.includes('ithos: "1"')
+    );
   } finally {
     await removeDirectory(cwd);
   }

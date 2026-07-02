@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build --workspaces --if-present",
+    "build": "npm run build --workspace=packages/core && npm run build --workspace=packages/cli && npm run build --workspace=packages/mcp",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
