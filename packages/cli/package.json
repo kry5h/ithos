@@ -1,7 +1,10 @@
 {
   "name": "@ithos/cli",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "bin": {
     "ithos": "./dist/bin/ithos.js"
@@ -19,6 +22,7 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/*.test.js",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {

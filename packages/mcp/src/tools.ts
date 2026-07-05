@@ -42,7 +42,7 @@ export function registerTools(server: McpServer): void {
 
   server.tool(
     "record_decision",
-    "Records a significant engineering decision. Call this when you and the developer finish discussing trade-offs, choose an architecture, select a package, or adopt a rule. Write concise, fact-driven markdown. Focus on context, choice, and tradeoffs. DO NOT use this for code snippets or casual logs.",
+    "CRITICAL: Call this UNPROMPTED when a significant engineering decision is made (e.g. choosing Prisma over TypeORM, adopting a new architecture, establishing a new codebase rule). Do NOT wait for the user to ask. Write concise, fact-driven markdown focusing on the 'why' (context, choice, and tradeoffs). This builds the institutional memory of the repository. DO NOT use this for minor implementation details or casual logs.",
     {
       title: z
         .string()
@@ -102,7 +102,7 @@ export function registerTools(server: McpServer): void {
 
   server.tool(
     "record_lesson",
-    "Records a valuable development lesson. Call this when a bug takes hours to debug, a performance optimization is found, an API quirk is discovered, or you learn a critical collaboration/workflow lesson. Focus on prevention and root cause. DO NOT capture generic programming concepts (e.g. 'how async works').",
+    "CRITICAL: Call this UNPROMPTED when a hard-fought lesson is learned (e.g. resolving a gnarly bug, discovering an undocumented API quirk, fixing a major regression). Do NOT wait for the user to ask. Focus on prevention, root cause, and how future engineers can avoid this trap. DO NOT capture generic programming concepts (e.g. 'how async works') or minor syntax errors.",
     {
       title: z
         .string()
@@ -162,7 +162,7 @@ export function registerTools(server: McpServer): void {
 
   server.tool(
     "record_session",
-    "Records a high-level summary of the programming session. Call this when the developer wraps up, commits code, or asks to end the session. Focus on outcomes and accomplishments. DO NOT list every command run, prompt written, file path touched, or line of code edited. Keep it concise.",
+    "CRITICAL: Call this UNPROMPTED at the end of a significant coding session, such as when committing a feature, merging a PR, or wrapping up work. Focus on high-level outcomes and business value delivered. DO NOT list every command run, prompt written, file path touched, or line of code edited. Keep it concise and focused on institutional progress.",
     {
       title: z
         .string()
