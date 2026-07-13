@@ -1,3 +1,7 @@
+---
+ithos: "1"
+---
+
 # Project
 
 ## Summary
@@ -11,6 +15,7 @@ Describe what this project is and why it exists.
 ## Technology Stack
 
 - TypeScript
+- Angular (dashboard UI)
 
 ## Architecture
 

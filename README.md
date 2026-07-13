@@ -12,6 +12,8 @@ How do they find out?
 
 Ithos solves this. It preserves **institutional memory**—the reasoning, trade-offs, lessons, and decisions—that explain *why* source code became what it is. While Git records *what* was built, Ithos records *why* it was built, making engineering knowledge durable for both developers and AI assistants.
 
+![Ithos in action — AI records a decision directly into .ithos/decisions/](assets/demo.png)
+
 ---
 
 ## Why Ithos?
@@ -42,6 +44,72 @@ All data is stored in **frontmatter-enhanced Markdown**, making it:
 - 🌲 **Git-Native:** Participates in branches, commits, merges, and reviews.
 - 📖 **Human-Readable:** Remains fully readable inside VS Code, Cursor, Obsidian, GitHub, or terminal without any proprietary tooling.
 - 🤖 **AI-Friendly:** Structured schemas facilitate automated contextual reads and writes.
+
+---
+
+## Quick Start
+
+### 1. Initialize your repository
+
+Install the CLI globally and initialize Ithos in your project:
+
+```bash
+npm install -g ithos
+ithos init
+```
+
+This creates the `.ithos/` folder structure in your current repository.
+
+### 2. Connect your AI assistant via MCP
+
+Install the MCP server globally:
+
+```bash
+npm install -g ithos-mcp
+```
+
+Then add it to your MCP client config.
+
+**Cursor** (`~/.cursor/mcp.json`) or **Claude Desktop** (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "ithos": {
+      "command": "ithos-mcp"
+    }
+  }
+}
+```
+
+> **nvm users:** The bare `ithos-mcp` command may not work since Cursor doesn't load your shell's PATH. Run `which ithos-mcp` in your terminal and use the full path instead:
+> ```json
+> {
+>   "mcpServers": {
+>     "ithos": {
+>       "command": "/your/full/path/to/ithos-mcp"
+>     }
+>   }
+> }
+> ```
+
+Restart your editor after saving the config.
+
+### 3. Start coding — Ithos handles the rest
+
+Your AI assistant will now automatically:
+- Record architectural decisions as you make them
+- Capture lessons from hard-fought debugging sessions
+- Log session summaries when you wrap up
+
+No prompting required.
+
+#### Exposed MCP Tools
+
+- **`get_project_context`**: Reads repo README and project metadata.
+- **`record_decision`**: Saves a chosen path, trade-offs, and alternatives.
+- **`record_lesson`**: Captures a development lesson and bug regression preventions.
+- **`record_session`**: Logs high-level goals met from the coding session.
 
 ---
 
@@ -76,42 +144,6 @@ Ithos is structured as a layered monorepo using npm workspaces:
 
 3. **`ithos-mcp` (Package: `packages/mcp`)**  
    A Model Context Protocol stdio server that permits AI coding assistants (like Cursor, Claude Desktop, Copilot) to automatically query project context and record decisions, lessons, or session logs in real-time.
-
----
-
-## Quick Start
-
-### 1. Initialize
-
-To initialize Ithos in any repository, simply run:
-
-```bash
-npx ithos init
-```
-
-### 2. Connect Your AI Assistant (MCP)
-
-To connect Ithos to an MCP client (such as Cursor or Claude Desktop), declare a new stdio handler in your client configuration points.
-
-Example definition:
-
-```json
-{
-  "mcpServers": {
-    "ithos": {
-      "command": "npx",
-      "args": ["-y", "ithos-mcp"]
-    }
-  }
-}
-```
-
-#### Exposed MCP Tools
-
-- **`get_project_context`**: Reads repo README and project metadata.
-- **`record_decision`**: Saves a chosen path, trade-offs, and alternatives.
-- **`record_lesson`**: Captures a development lesson and bug regression preventions.
-- **`record_session`**: Logs high-level goals met from the coding session.
 
 ---
 
