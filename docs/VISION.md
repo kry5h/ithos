@@ -2,7 +2,8 @@
 
 # Ithos
 
-> The open, local-first institutional memory layer for AI-assisted software development.
+> The open, local-first institutional memory layer for AI-assisted software
+> development.
 
 ---
 
@@ -12,7 +13,8 @@ Software has changed.
 
 AI can now generate code faster than humans can absorb it.
 
-Developers no longer spend most of their time writing code—they spend it reviewing, refining, and making engineering decisions.
+Developers no longer spend most of their time writing code—they spend it
+reviewing, refining, and making engineering decisions.
 
 Over time, the code remains.
 
@@ -37,7 +39,8 @@ Ithos preserves engineering memory.
 
 Create an open standard for institutional engineering memory.
 
-Every software repository should eventually contain a `.ithos` directory that evolves alongside the source code.
+Every software repository should eventually contain a `.ithos` directory that
+evolves alongside the source code.
 
 Engineering memory should be:
 
@@ -60,7 +63,8 @@ It is not another knowledge base.
 
 Ithos is the missing memory layer between software and the people who build it.
 
-It captures the decisions, context, patterns, lessons, and evolution that explain how software became what it is.
+It captures the decisions, context, patterns, lessons, and evolution that
+explain how software became what it is.
 
 ---
 
@@ -89,9 +93,11 @@ Humans learn from it.
 
 Engineering knowledge should not disappear inside private chats with AI.
 
-When developers choose to share their engineering memory, it should become a high-quality source of learning for the community.
+When developers choose to share their engineering memory, it should become a
+high-quality source of learning for the community.
 
-We envision a future where developers follow great engineering thinking—not because it is popular, but because it is useful.
+We envision a future where developers follow great engineering thinking—not
+because it is popular, but because it is useful.
 
 Reputation should be earned through engineering insight, not engagement.
 
@@ -111,4 +117,5 @@ Months later they ask:
 
 And Ithos answers from the project's own engineering memory.
 
-If Ithos becomes as natural to a repository as Git is today, we have achieved our mission.
+If Ithos becomes as natural to a repository as Git is today, we have achieved
+our mission.

@@ -6,7 +6,7 @@ test("createCli returns a configured commander program", () => {
   const program = createCli();
 
   assert.equal(program.name(), "ithos");
-  
+
   const commands = program.commands.map((cmd) => cmd.name());
   assert.ok(commands.includes("init"));
   assert.ok(commands.includes("validate"));

@@ -4,7 +4,8 @@
 
 Welcome!
 
-Ithos is built differently from most software projects. Before making changes, please understand the project's philosophy.
+Ithos is built differently from most software projects. Before making changes,
+please understand the project's philosophy.
 
 ## Read First
 
@@ -34,11 +35,11 @@ npm run test
 
 ### Packages
 
-| Package | npm | Description |
-|---|---|---|
-| `packages/core` | `ithos-core` | Domain logic, file operations, search |
-| `packages/cli` | `ithos` | Terminal CLI (`ithos init`, `ithos search`, etc.) |
-| `packages/mcp` | `ithos-mcp` | MCP stdio server for AI assistants |
+| Package         | npm          | Description                                       |
+| --------------- | ------------ | ------------------------------------------------- |
+| `packages/core` | `ithos-core` | Domain logic, file operations, search             |
+| `packages/cli`  | `ithos`      | Terminal CLI (`ithos init`, `ithos search`, etc.) |
+| `packages/mcp`  | `ithos-mcp`  | MCP stdio server for AI assistants                |
 
 ### Testing the CLI locally
 
@@ -88,7 +89,8 @@ If you are an AI agent:
 - Avoid introducing unnecessary dependencies.
 - Keep generated markdown concise and human-readable.
 - Never invent project facts or history.
-- If an architectural decision changes, propose an update to `docs/DECISIONS.md`.
+- If an architectural decision changes, propose an update to
+  `docs/DECISIONS.md`.
 
 ---
 

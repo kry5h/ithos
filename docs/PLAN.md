@@ -4,7 +4,8 @@
 
 This document tracks the implementation roadmap for Ithos.
 
-Unlike VISION.md and PRINCIPLES.md, this document is expected to change frequently.
+Unlike VISION.md and PRINCIPLES.md, this document is expected to change
+frequently.
 
 ---
 
@@ -19,7 +20,8 @@ npm install -g ithos        # CLI
 npm install -g ithos-mcp    # MCP server
 ```
 
-The core loop works end-to-end: AI agents automatically record decisions, lessons, and session summaries into `.ithos/` as you code.
+The core loop works end-to-end: AI agents automatically record decisions,
+lessons, and session summaries into `.ithos/` as you code.
 
 ---
 
@@ -63,12 +65,16 @@ ithos export
 Tools shipped:
 
 - `get_project_context` — reads `.ithos/README.md` and `project.md`
-- `record_decision` — saves architectural decisions (supports optional `tags` and `related` links)
-- `record_lesson` — captures development lessons (supports optional `tags` and `related` links)
-- `record_session` — logs session summaries (supports optional `tags` and `related` links)
+- `record_decision` — saves architectural decisions (supports optional `tags`
+  and `related` links)
+- `record_lesson` — captures development lessons (supports optional `tags` and
+  `related` links)
+- `record_session` — logs session summaries (supports optional `tags` and
+  `related` links)
 - `search_memory` — searches engineering memory by keyword
 
-Published as `ithos-mcp` on npm. Works with Cursor, Claude Desktop, and any MCP-compatible client.
+Published as `ithos-mcp` on npm. Works with Cursor, Claude Desktop, and any
+MCP-compatible client.
 
 ---
 
@@ -87,7 +93,8 @@ Views:
 
 Deliverable:
 
-Developers can browse engineering memory without opening individual markdown files.
+Developers can browse engineering memory without opening individual markdown
+files.
 
 ---
 
@@ -101,7 +108,8 @@ Extend search beyond keyword matching.
 
 Deliverable:
 
-Developers can quickly surface relevant engineering knowledge across large repositories.
+Developers can quickly surface relevant engineering knowledge across large
+repositories.
 
 ---
 

@@ -57,11 +57,15 @@ export function registerTools(server: McpServer): void {
       tags: z
         .array(z.string())
         .optional()
-        .describe("Optional tags to categorize this decision (e.g., ['auth', 'database'])"),
+        .describe(
+          "Optional tags to categorize this decision (e.g., ['auth', 'database'])"
+        ),
       related: z
         .array(z.string())
         .optional()
-        .describe("Optional related artifact IDs or file paths this links to (e.g., ['[[DEC-20260713000500-local-date]]'])"),
+        .describe(
+          "Optional related artifact IDs or file paths this links to (e.g., ['[[DEC-20260713000500-local-date]]'])"
+        ),
       cwd: z
         .string()
         .optional()
@@ -131,11 +135,15 @@ export function registerTools(server: McpServer): void {
       tags: z
         .array(z.string())
         .optional()
-        .describe("Optional tags to categorize this lesson (e.g., ['auth', 'database'])"),
+        .describe(
+          "Optional tags to categorize this lesson (e.g., ['auth', 'database'])"
+        ),
       related: z
         .array(z.string())
         .optional()
-        .describe("Optional related artifact IDs or file paths this links to (e.g., ['[[DEC-20260713000500-local-date]]'])"),
+        .describe(
+          "Optional related artifact IDs or file paths this links to (e.g., ['[[DEC-20260713000500-local-date]]'])"
+        ),
       cwd: z
         .string()
         .optional()
@@ -205,11 +213,15 @@ export function registerTools(server: McpServer): void {
       tags: z
         .array(z.string())
         .optional()
-        .describe("Optional tags to categorize this session (e.g., ['auth', 'database'])"),
+        .describe(
+          "Optional tags to categorize this session (e.g., ['auth', 'database'])"
+        ),
       related: z
         .array(z.string())
         .optional()
-        .describe("Optional related artifact IDs or file paths this links to (e.g., ['[[DEC-20260713000500-local-date]]'])"),
+        .describe(
+          "Optional related artifact IDs or file paths this links to (e.g., ['[[DEC-20260713000500-local-date]]'])"
+        ),
       cwd: z
         .string()
         .optional()

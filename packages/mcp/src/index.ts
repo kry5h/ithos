@@ -9,7 +9,7 @@ console.warn = (...args) => console.error(...args);
 export async function runServer(): Promise<void> {
   const server = new McpServer({
     name: "ithos-mcp",
-    version: "0.1.0"
+    version: "0.1.2"
   });
 
   registerTools(server);

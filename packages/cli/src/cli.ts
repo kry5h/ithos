@@ -61,39 +61,48 @@ export function createCli(): Command {
     .requiredOption("--title <title>", "artifact title")
     .option("-b, --body <body>", "artifact body")
     .option("--tags <tags>", "comma-separated tags")
-    .option("--related <related>", "comma-separated related artifact IDs or file paths")
-    .action(async (options: {
-      type: string;
-      title: string;
-      body?: string;
-      tags?: string;
-      related?: string;
-    }) => {
-      if (!isArtifactType(options.type)) {
-        console.error(`Unsupported artifact type: ${options.type}`);
-        process.exitCode = 1;
-        return;
+    .option(
+      "--related <related>",
+      "comma-separated related artifact IDs or file paths"
+    )
+    .action(
+      async (options: {
+        type: string;
+        title: string;
+        body?: string;
+        tags?: string;
+        related?: string;
+      }) => {
+        if (!isArtifactType(options.type)) {
+          console.error(`Unsupported artifact type: ${options.type}`);
+          process.exitCode = 1;
+          return;
+        }
+
+        const body = options.body ?? (await readStdin());
+        if (body.trim().length === 0) {
+          console.error("Artifact body is required through --body or stdin.");
+          process.exitCode = 1;
+          return;
+        }
+
+        const tags = options.tags
+          ? options.tags.split(",").map((t) => t.trim())
+          : undefined;
+        const related = options.related
+          ? options.related.split(",").map((r) => r.trim())
+          : undefined;
+
+        const file = await recordArtifact({
+          type: options.type as ArtifactType,
+          title: options.title,
+          body,
+          tags,
+          related
+        });
+        console.log(`Recorded ${file}`);
       }
-
-      const body = options.body ?? (await readStdin());
-      if (body.trim().length === 0) {
-        console.error("Artifact body is required through --body or stdin.");
-        process.exitCode = 1;
-        return;
-      }
-
-      const tags = options.tags ? options.tags.split(",").map(t => t.trim()) : undefined;
-      const related = options.related ? options.related.split(",").map(r => r.trim()) : undefined;
-
-      const file = await recordArtifact({
-        type: options.type as ArtifactType,
-        title: options.title,
-        body,
-        tags,
-        related
-      });
-      console.log(`Recorded ${file}`);
-    });
+    );
 
   program
     .command("search")

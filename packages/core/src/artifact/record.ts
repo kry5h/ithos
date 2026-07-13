@@ -20,8 +20,12 @@ export async function recordArtifact(input: RecordInput): Promise<string> {
 
   await mkdir(path.dirname(absoluteFile), { recursive: true });
 
-  const tagsValue = input.tags && input.tags.length > 0 ? JSON.stringify(input.tags) : "[]";
-  const relatedValue = input.related && input.related.length > 0 ? JSON.stringify(input.related) : "[]";
+  const tagsValue =
+    input.tags && input.tags.length > 0 ? JSON.stringify(input.tags) : "[]";
+  const relatedValue =
+    input.related && input.related.length > 0
+      ? JSON.stringify(input.related)
+      : "[]";
 
   const markdown = [
     "---",

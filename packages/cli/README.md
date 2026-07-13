@@ -1,10 +1,13 @@
 # ithos
 
-> The terminal CLI for Ithos — the local-first institutional memory layer for AI-assisted software development.
+> The terminal CLI for Ithos — the local-first institutional memory layer for
+> AI-assisted software development.
 
-This is the command-line client used to initialize and manage an Ithos repository.
+This is the command-line client used to initialize and manage an Ithos
+repository.
 
-For the full documentation, architecture details, and MCP setup guides, please visit the [Main Ithos Repository](https://github.com/kry5h/ithos).
+For the full documentation, architecture details, and MCP setup guides, please
+visit the [Main Ithos Repository](https://github.com/kry5h/ithos).
 
 ## Installation
 

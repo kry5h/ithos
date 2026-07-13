@@ -1,16 +1,24 @@
 # Ithos
 
-> The open, local-first institutional memory layer for AI-assisted software development. **Your data is yours. Saved in your own project's `.ithos` folder.**
+> The open, local-first institutional memory layer for AI-assisted software
+> development. **Your data is yours. Saved in your own project's `.ithos`
+> folder.**
 
-A new developer (or engineering manager) joins the project and asks: *"Why did we choose Prisma over TypeORM?"*
+A new developer (or engineering manager) joins the project and asks: _"Why did
+we choose Prisma over TypeORM?"_
 
 How do they find out?
+
 1. They search Slack/Discord (and find scattered threads).
 2. They dig through old pull requests.
 3. They ask a senior engineer to explain it again.
-4. They ask an AI assistant, which hallucinates an answer because it lacks context.
+4. They ask an AI assistant, which hallucinates an answer because it lacks
+   context.
 
-Ithos solves this. It preserves **institutional memory**—the reasoning, trade-offs, lessons, and decisions—that explain *why* source code became what it is. While Git records *what* was built, Ithos records *why* it was built, making engineering knowledge durable for both developers and AI assistants.
+Ithos solves this. It preserves **institutional memory**—the reasoning,
+trade-offs, lessons, and decisions—that explain _why_ source code became what it
+is. While Git records _what_ was built, Ithos records _why_ it was built, making
+engineering knowledge durable for both developers and AI assistants.
 
 ![Ithos in action — AI records a decision directly into .ithos/decisions/](assets/demo.png)
 
@@ -18,13 +26,18 @@ Ithos solves this. It preserves **institutional memory**—the reasoning, trade-
 
 ## Why Ithos?
 
-AI assistants can generate code faster than humans can review it. As code bases evolve rapidly:
+AI assistants can generate code faster than humans can review it. As code bases
+evolve rapidly:
 
 - Reasoning gets lost inside ephemeral AI chat interfaces.
-- Future maintainers struggle to understand why an architecture was chosen, why an approach was rejected, or what lesson was learned from a major regression.
+- Future maintainers struggle to understand why an architecture was chosen, why
+  an approach was rejected, or what lesson was learned from a major regression.
 - Project understanding decays over time.
 
-Ithos establishes a standardized, git-native, markdown-based memory layout at the root of your project: `.ithos/`. It shifts the burden of documentation to the AI—as you code, your AI assistant automatically records the "why" into Ithos without breaking your flow.
+Ithos establishes a standardized, git-native, markdown-based memory layout at
+the root of your project: `.ithos/`. It shifts the burden of documentation to
+the AI—as you code, your AI assistant automatically records the "why" into Ithos
+without breaking your flow.
 
 ---
 
@@ -42,8 +55,10 @@ Ithos establishes a standardized, git-native, markdown-based memory layout at th
 All data is stored in **frontmatter-enhanced Markdown**, making it:
 
 - 🌲 **Git-Native:** Participates in branches, commits, merges, and reviews.
-- 📖 **Human-Readable:** Remains fully readable inside VS Code, Cursor, Obsidian, GitHub, or terminal without any proprietary tooling.
-- 🤖 **AI-Friendly:** Structured schemas facilitate automated contextual reads and writes.
+- 📖 **Human-Readable:** Remains fully readable inside VS Code, Cursor,
+  Obsidian, GitHub, or terminal without any proprietary tooling.
+- 🤖 **AI-Friendly:** Structured schemas facilitate automated contextual reads
+  and writes.
 
 ---
 
@@ -70,7 +85,8 @@ npm install -g ithos-mcp
 
 Then add it to your MCP client config.
 
-**Cursor** (`~/.cursor/mcp.json`) or **Claude Desktop** (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+**Cursor** (`~/.cursor/mcp.json`) or **Claude Desktop**
+(`~/Library/Application Support/Claude/claude_desktop_config.json`):
 
 ```json
 {
@@ -87,6 +103,7 @@ Restart your editor after saving the config.
 ### 3. Start coding — Ithos handles the rest
 
 Your AI assistant will now automatically:
+
 - Record architectural decisions as you make them
 - Capture lessons from hard-fought debugging sessions
 - Log session summaries when you wrap up
@@ -97,10 +114,10 @@ No prompting required.
 
 Any developer (or the AI itself) can query past institutional knowledge:
 
-> "When did we choose Prisma and why?"
-> "What did we learn about the auth bug?"
+> "When did we choose Prisma and why?" "What did we learn about the auth bug?"
 
-The AI assistant will automatically use `search_memory` to locate and read the relevant `.ithos` files.
+The AI assistant will automatically use `search_memory` to locate and read the
+relevant `.ithos` files.
 
 ![Ithos in action — AI recalling a past decision](assets/search-demo.png)
 
@@ -108,9 +125,11 @@ The AI assistant will automatically use `search_memory` to locate and read the r
 
 - **`get_project_context`**: Reads repo README and project metadata.
 - **`record_decision`**: Saves a chosen path, trade-offs, and alternatives.
-- **`record_lesson`**: Captures a development lesson and bug regression preventions.
+- **`record_lesson`**: Captures a development lesson and bug regression
+  preventions.
 - **`record_session`**: Logs high-level goals met from the coding session.
-- **`search_memory`**: Searches through decisions, lessons, and sessions by keyword.
+- **`search_memory`**: Searches through decisions, lessons, and sessions by
+  keyword.
 
 ---
 
@@ -138,20 +157,28 @@ Ithos is structured as a layered monorepo using npm workspaces:
 ```
 
 1. **`ithos-core` (Package: `packages/core`)**  
-   The domain heart of Ithos. Performs repository initialization, structure validation, file reading/writing operations, keyword search, compilation exports, and frontmatter management.
+   The domain heart of Ithos. Performs repository initialization, structure
+   validation, file reading/writing operations, keyword search, compilation
+   exports, and frontmatter management.
 
 2. **`ithos` (Package: `packages/cli`)**  
-   A thin terminal command interface wrapping the core operations. Exposes commands like `ithos init`.
+   A thin terminal command interface wrapping the core operations. Exposes
+   commands like `ithos init`.
 
 3. **`ithos-mcp` (Package: `packages/mcp`)**  
-   A Model Context Protocol stdio server that permits AI coding assistants (like Cursor, Claude Desktop, Copilot) to automatically query project context and record decisions, lessons, or session logs in real-time.
+   A Model Context Protocol stdio server that permits AI coding assistants (like
+   Cursor, Claude Desktop, Copilot) to automatically query project context and
+   record decisions, lessons, or session logs in real-time.
 
 ---
 
 ## Principles
 
 1. **Memory First:** Everything exists to preserve engineering memory.
-2. **Local First:** No internet connection or cloud service required. Your data is yours. Saved in your own project's `.ithos` folder.
-3. **Markdown Source of Truth:** Indexes and databases are secondary and always derived.
+2. **Local First:** No internet connection or cloud service required. Your data
+   is yours. Saved in your own project's `.ithos` folder.
+3. **Markdown Source of Truth:** Indexes and databases are secondary and always
+   derived.
 4. **Git Native:** Merges and PR reviews act as the synchronization mechanism.
-5. **AI Captures, Humans Understand:** AI handles the documentation work; the developer remains responsible for reviewing and approving actions.
+5. **AI Captures, Humans Understand:** AI handles the documentation work; the
+   developer remains responsible for reviewing and approving actions.

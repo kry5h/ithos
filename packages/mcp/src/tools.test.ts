@@ -11,6 +11,6 @@ test("registerTools adds Ithos tools to the MCP server without error", () => {
 
   // Basic integration test to ensure the tool registration does not throw.
   registerTools(server);
-  
+
   assert.ok(true, "Tools registered successfully");
 });

@@ -304,7 +304,9 @@ The schema will evolve over time.
 
 Use standard markdown links whenever possible.
 
-We support Obsidian-style wiki links (e.g., `[[DEC-20260713213433-use-prisma-over-typeorm]]`) or IDs inside the frontmatter `related` array to weave a traversable knowledge graph.
+We support Obsidian-style wiki links (e.g.,
+`[[DEC-20260713213433-use-prisma-over-typeorm]]`) or IDs inside the frontmatter
+`related` array to weave a traversable knowledge graph.
 
 Cross-reference related artifacts frequently.
 
