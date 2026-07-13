@@ -8,13 +8,13 @@
 
 As code bases evolve rapidly with AI assistance, critical context gets lost. Git
 records _what_ was built, but the reasoning, rejected alternatives, and lessons
-learned disappear into ephemeral AI chat interfaces and scattered Slack threads.
+learned disappear into ephemeral chat interfaces and scattered threads.
 
 Ithos solves this by preserving **institutional memory**. It establishes a
 standardized, git-native, markdown-based memory layout at the root of your
-project: `.ithos/`. Through a Model Context Protocol (MCP) server, it shifts the
-burden of capturing decisions, lessons, and session contexts to your AI
-assistant—preserving engineering reasoning without breaking your flow.
+project: `.ithos/`. Through MCP, AI assistants can preserve institutional memory
+directly into your project’s `.ithos` directory—capturing engineering reasoning
+without breaking your flow.
 
 ---
 
@@ -28,19 +28,46 @@ assistant—preserving engineering reasoning without breaking your flow.
 - 📖 **Markdown Source of Truth:** Everything is stored in frontmatter-enhanced
   Markdown. It remains fully readable in VS Code, Cursor, Obsidian, GitHub, or a
   terminal.
-- 🤖 **AI-Assisted, Human-Approved:** Your AI assistant can draft memory files
-  via MCP as you code, but developers remain responsible for reviewing and
+- 🤖 **AI-Assisted, Human-Approved:** Your AI coding assistant can draft memory
+  files via MCP as you code, but developers remain responsible for reviewing and
   approving actions.
+
+---
+
+## Why not Git?
+
+Git records **what** changed.
+
+Commit messages explain **what** was intended.
+
+Ithos preserves **why** decisions were made.
+
+Git and Ithos complement each other. Source code explains the implementation;
+institutional memory explains the reasoning.
+
+---
+
+## Use Cases
+
+- **Onboard new engineers faster:** Let new developers explore past context and
+  context dependencies independently.
+- **Give AI agents accurate context:** Feed your assistant structured project
+  rules, stack definitions, and history.
+- **Preserve architectural decisions:** Capture the pros, cons, and tradeoffs of
+  design choices.
+- **Remember why alternatives were rejected:** Keep a record of what didn't work
+  so you don't repeat past experiments.
+- **Build a searchable memory:** Keep decisions, lessons, and sessions indexable
+  and searchable.
 
 ---
 
 ## How It Works
 
-### 1. Preserving Memory (AI-Assisted Capture)
+### 1. Preserving Memory (AI-Preserved Capture)
 
-When configured with your AI assistant (like Cursor, Claude Desktop, or
-Copilot), the assistant can call MCP tools to write structured files in the
-background:
+When configured with your assistant (like Cursor, Claude Desktop, or Copilot),
+the AI agent can call MCP tools to write structured files in the background:
 
 - **Decisions:** Record chosen paths, tradeoffs, and rejected alternatives.
 - **Lessons:** Capture post-mortems, bug resolutions, and workflow guidelines.
@@ -48,14 +75,27 @@ background:
 
 ### 2. Recalling Memory (Context Retrieval)
 
-Any developer—or the AI itself—can query past institutional knowledge when
-solving a bug or refactoring code:
+Any developer—or the assistant itself—can query past institutional knowledge
+when solving a bug or refactoring code:
 
 > _"Why did we choose Prisma and why?"_ _"What did we learn about the auth bug
 > last month?"_
 
 The AI assistant can automatically use `search_memory` to locate and read
 relevant files.
+
+---
+
+## Repository Structure
+
+```
+.ithos/
+├── README.md           # Preserved memory overview for new AI agents & developers
+├── project.md          # Project context summary, technology stack, conventions
+├── decisions/          # Significant engineering decisions (one file per decision)
+├── lessons/            # Post-mortems, bug resolutions, and workflow lessons
+└── sessions/           # Developer session outcomes and accomplishments
+```
 
 ---
 
@@ -98,16 +138,16 @@ Restart your editor after saving the config.
 
 ---
 
-## Repository Structure
+## Principles
 
-```
-.ithos/
-├── README.md           # Preserved memory overview for new AI agents & developers
-├── project.md          # Project context summary, technology stack, conventions
-├── decisions/          # Significant engineering decisions (one file per decision)
-├── lessons/            # Post-mortems, bug resolutions, and workflow lessons
-└── sessions/           # Developer session outcomes and accomplishments
-```
+1.  **Memory First:** Everything exists to preserve engineering memory.
+2.  **Local First:** No internet connection or cloud service required. Your data
+    is yours. Saved in your own project's `.ithos` folder.
+3.  **Markdown Source of Truth:** Indexes and databases are secondary and always
+    derived.
+4.  **Git Native:** Merges and PR reviews act as the synchronization mechanism.
+5.  **AI Captures, Humans Understand:** AI handles the preservation work; the
+    developer remains responsible for reviewing and approving actions.
 
 ---
 
@@ -142,16 +182,3 @@ Ithos is structured as a layered monorepo using npm workspaces:
 3.  **`ithos-mcp` (`packages/mcp`)**: A Model Context Protocol stdio server that
     permits AI coding assistants to automatically query and record decisions,
     lessons, or session logs in real-time.
-
----
-
-## Principles
-
-1.  **Memory First:** Everything exists to preserve engineering memory.
-2.  **Local First:** No internet connection or cloud service required. Your data
-    is yours. Saved in your own project's `.ithos` folder.
-3.  **Markdown Source of Truth:** Indexes and databases are secondary and always
-    derived.
-4.  **Git Native:** Merges and PR reviews act as the synchronization mechanism.
-5.  **AI Captures, Humans Understand:** AI handles the preservation work; the
-    developer remains responsible for reviewing and approving actions.
