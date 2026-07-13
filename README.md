@@ -232,10 +232,3 @@ Ithos is structured as a layered monorepo using npm workspaces:
 3.  **`ithos-mcp` (`packages/mcp`)**: A Model Context Protocol stdio server that
     permits AI coding assistants to automatically query and record decisions,
     lessons, or session logs in real-time.
-ation, structure validation, file reading/writing, and
-    frontmatter management.
-2.  **`ithos` (`packages/cli`)**: A thin terminal command interface wrapping the
-    core operations (e.g., `ithos init`).
-3.  **`ithos-mcp` (`packages/mcp`)**: A Model Context Protocol stdio server that
-    permits AI coding assistants to automatically query and record decisions,
-    lessons, or session logs in real-time.

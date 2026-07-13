@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ithos — Engineering Memory for AI-Assisted Development</title>
+  <meta name="description" content="The open, local-first institutional memory layer for AI-assisted software development. Your data is yours. Saved in your project's .ithos folder.">
+  <meta name="theme-color" content="#0a0a0f">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ithos — Engineering Memory for AI-Assisted Development">
+  <meta property="og:description" content="Git preserves source code. Ithos preserves engineering memory. Local-first, markdown-native, AI-friendly.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kry5h.github.io/ithos/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">ithos</a>
+      <div class="nav-links">
+        <a href="#pillars">Why</a>
+        <a href="#how">How</a>
+        <a href="#timeline-demo">Timeline</a>
+        <a href="#quickstart">Get Started</a>
+        <a href="https://github.com/kry5h/ithos" class="nav-github" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <header class="hero" id="hero">
+    <div class="hero-glow"></div>
+    <div class="container">
+      <p class="hero-badge">Open Source · Local-First · v0.1.4</p>
+      <h1 class="hero-title">
+        Git preserves source code.<br>
+        <span class="hero-accent">Ithos preserves engineering memory.</span>
+      </h1>
+      <p class="hero-sub">
+        The institutional memory layer for AI-assisted development.<br>
+        Decisions, lessons, patterns, regressions — captured in markdown,<br>
+        stored in your repo, owned by you.
+      </p>
+      <div class="hero-actions">
+        <a href="#quickstart" class="btn btn-primary">Get Started</a>
+        <a href="https://github.com/kry5h/ithos" class="btn btn-ghost" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+      <div class="hero-install">
+        <code>npm install -g ithos</code>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── PROBLEM ─── -->
+  <section class="section section-problem" id="problem">
+    <div class="container">
+      <p class="section-kicker">The Problem</p>
+      <h2 class="section-title">Code is generated at 10× velocity.<br>Human comprehension remains 1×.</h2>
+      <p class="section-desc">
+        AI writes code faster than teams can absorb it. Git records <em>what</em> was built —
+        but the reasoning, rejected alternatives, and hard-won lessons vanish into
+        ephemeral chat windows and scattered threads. Weeks later, even the original author
+        can't explain <em>why</em>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── PILLARS ─── -->
+  <section class="section section-pillars" id="pillars">
+    <div class="container">
+      <p class="section-kicker">Core Pillars</p>
+      <h2 class="section-title">Why Ithos?</h2>
+      <div class="pillars-grid">
+        <div class="pillar">
+          <span class="pillar-icon">🔒</span>
+          <h3>Zero-Cloud Dependency</h3>
+          <p>Your memory lives locally inside <code>.ithos/</code>. No external databases, SaaS subscriptions, or internet required.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">🌲</span>
+          <h3>Git-Native</h3>
+          <p>Memory files participate in branches, commits, merges, and pull reviews. They move with your code.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">📖</span>
+          <h3>Markdown Source of Truth</h3>
+          <p>Frontmatter-enhanced Markdown. Fully readable in VS Code, Cursor, Obsidian, GitHub, or a terminal.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">🤖</span>
+          <h3>AI-Assisted, Human-Approved</h3>
+          <p>Your AI assistant drafts memory files via MCP as you code. You review and approve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GIT vs ITHOS ─── -->
+  <section class="section section-contrast" id="contrast">
+    <div class="container">
+      <div class="contrast-grid">
+        <div class="contrast-col contrast-git">
+          <h3>Git</h3>
+          <p class="contrast-records">records <strong>what</strong> changed</p>
+          <p class="contrast-detail">Commits, diffs, and blame tell you which lines were modified and by whom.</p>
+        </div>
+        <div class="contrast-divider">
+          <span class="contrast-plus">+</span>
+        </div>
+        <div class="contrast-col contrast-ithos">
+          <h3>Ithos</h3>
+          <p class="contrast-records">preserves <strong>why</strong> it changed</p>
+          <p class="contrast-detail">Decisions, tradeoffs, lessons, and rejected alternatives — the reasoning behind the code.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HOW IT WORKS ─── -->
+  <section class="section section-how" id="how">
+    <div class="container">
+      <p class="section-kicker">How It Works</p>
+      <h2 class="section-title">Three steps to engineering memory</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <span class="step-num">01</span>
+          <h3>Preserve</h3>
+          <p>Your AI assistant captures decisions, lessons, and session logs via MCP — structured, frontmatter-tagged, and saved to <code>.ithos/</code>.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <h3>Recall</h3>
+          <p>Search memory with <code>ithos search</code> or let your AI assistant automatically query past decisions when solving a bug or making a change.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <h3>Understand</h3>
+          <p>Run <code>ithos timeline</code> to see the project's full engineering history unfold chronologically — like watching the project remember itself.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TIMELINE DEMO ─── -->
+  <section class="section section-terminal" id="timeline-demo">
+    <div class="container">
+      <p class="section-kicker">Timeline</p>
+      <h2 class="section-title">Your project's engineering history, at a glance</h2>
+      <div class="terminal" id="terminal">
+        <div class="terminal-bar">
+          <span class="terminal-dot terminal-dot-red"></span>
+          <span class="terminal-dot terminal-dot-yellow"></span>
+          <span class="terminal-dot terminal-dot-green"></span>
+          <span class="terminal-title">ithos timeline</span>
+        </div>
+        <div class="terminal-body">
+<pre><span class="t-prompt">$</span> <span class="t-cmd">ithos timeline</span>
+
+<span class="t-date">2026-07-02</span>
+
+  <span class="t-icon">📌</span>  <span class="t-type-decision">Decision</span>      Use Prisma over TypeORM
+  <span class="t-dim">→ Better migrations and developer experience</span>
+  <span class="t-dim">→ Schema-driven client with strong TypeScript inference</span>
+  <span class="t-dim">↳ .ithos/decisions/use-prisma-over-typeorm.md</span>
+
+<span class="t-sep">────────────────────────────────────────────────────</span>
+
+<span class="t-date">2026-07-05</span>
+
+  <span class="t-icon">💡</span>  <span class="t-type-lesson">Lesson</span>        Avoid nested transactions
+  <span class="t-dim">→ Caused connection pool exhaustion under load</span>
+  <span class="t-dim">→ Use sequential queries with explicit savepoints instead</span>
+  <span class="t-dim">↳ .ithos/lessons/avoid-nested-transactions.md</span>
+
+<span class="t-sep">────────────────────────────────────────────────────</span>
+
+<span class="t-date">2026-07-08</span>
+
+  <span class="t-icon">⚠️</span>  <span class="t-type-regression">Regression</span>    Auth middleware broke guest routes
+  <span class="t-dim">→ Middleware applied globally instead of per-route</span>
+  <span class="t-dim">→ Fixed by splitting into authenticated and public pipelines</span>
+  <span class="t-dim">↳ .ithos/regressions/auth-middleware-guest-routes.md</span>
+
+  <span class="t-icon">🧠</span>  <span class="t-type-session">Session</span>       Implemented MCP server
+  <span class="t-dim">→ Created search_memory capability</span>
+  <span class="t-dim">→ Integrated with Cursor and Claude Desktop</span>
+  <span class="t-dim">↳ .ithos/sessions/implement-mcp-server.md</span>
+
+<span class="t-sep">────────────────────────────────────────────────────</span>
+
+<span class="t-date">2026-07-13</span>
+
+  <span class="t-icon">📌</span>  <span class="t-type-decision">Decision</span>      Institutional Memory over Engineering Memory
+  <span class="t-dim">→ Better captures the organizational, durable nature of the concept</span>
+  <span class="t-dim">↳ .ithos/decisions/institutional-memory-terminology.md</span>
+
+  <span class="t-dim">5 entries across 4 days</span></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── REPO STRUCTURE ─── -->
+  <section class="section section-structure" id="structure">
+    <div class="container">
+      <p class="section-kicker">Repository Layout</p>
+      <h2 class="section-title">Everything lives inside <code>.ithos/</code></h2>
+      <div class="structure-block">
+<pre><span class="s-dir">.ithos/</span>
+├── README.md            <span class="s-comment"># Memory overview for AI agents &amp; developers</span>
+├── project.md           <span class="s-comment"># Project context, stack, conventions</span>
+├── <span class="s-dir">decisions/</span>          <span class="s-comment"># Engineering decisions with tradeoffs</span>
+├── <span class="s-dir">architecture/</span>       <span class="s-comment"># Structural changes and ADRs</span>
+├── <span class="s-dir">features/</span>           <span class="s-comment"># Feature records and capabilities</span>
+├── <span class="s-dir">patterns/</span>           <span class="s-comment"># Reusable patterns and conventions</span>
+├── <span class="s-dir">lessons/</span>            <span class="s-comment"># Post-mortems, bug resolutions</span>
+├── <span class="s-dir">regressions/</span>        <span class="s-comment"># Regressions and context</span>
+├── <span class="s-dir">defects/</span>            <span class="s-comment"># Defect records</span>
+├── <span class="s-dir">gaps/</span>               <span class="s-comment"># Known gaps and deferred work</span>
+├── <span class="s-dir">releases/</span>           <span class="s-comment"># Release notes and milestones</span>
+└── <span class="s-dir">sessions/</span>           <span class="s-comment"># Developer session outcomes</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── QUICK START ─── -->
+  <section class="section section-quickstart" id="quickstart">
+    <div class="container">
+      <p class="section-kicker">Get Started</p>
+      <h2 class="section-title">Three commands. That's it.</h2>
+      <div class="qs-steps">
+        <div class="qs-step">
+          <h3><span class="qs-num">1</span> Initialize</h3>
+          <div class="qs-code"><pre><span class="t-prompt">$</span> npm install -g ithos
+<span class="t-prompt">$</span> ithos init</pre></div>
+          <p>Creates the <code>.ithos/</code> structure in your project root.</p>
+        </div>
+        <div class="qs-step">
+          <h3><span class="qs-num">2</span> Connect MCP</h3>
+          <div class="qs-code"><pre><span class="t-prompt">$</span> npm install -g ithos-mcp</pre></div>
+          <p>Add to your AI client config and restart your editor.</p>
+          <div class="qs-code qs-code-json"><pre>{
+  "mcpServers": {
+    "ithos": {
+      "command": "ithos-mcp"
+    }
+  }
+}</pre></div>
+        </div>
+        <div class="qs-step">
+          <h3><span class="qs-num">3</span> Read the Timeline</h3>
+          <div class="qs-code"><pre><span class="t-prompt">$</span> ithos timeline</pre></div>
+          <p>Watch the project's engineering memory unfold.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CLI COMMANDS ─── -->
+  <section class="section section-commands" id="commands">
+    <div class="container">
+      <p class="section-kicker">CLI Reference</p>
+      <h2 class="section-title">Commands</h2>
+      <div class="commands-table-wrap">
+        <table class="commands-table">
+          <thead>
+            <tr><th>Command</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>ithos init</code></td><td>Initialize the <code>.ithos/</code> directory</td></tr>
+            <tr><td><code>ithos validate</code></td><td>Verify repository structure matches the spec</td></tr>
+            <tr><td><code>ithos doctor</code></td><td>Inspect local setup and diagnose issues</td></tr>
+            <tr><td><code>ithos record</code></td><td>Record a decision, lesson, session, or other artifact</td></tr>
+            <tr><td><code>ithos search &lt;query&gt;</code></td><td>Search across all engineering memory</td></tr>
+            <tr><td><code>ithos export</code></td><td>Export the full memory directory to stdout</td></tr>
+            <tr><td><code>ithos timeline</code></td><td>Chronological timeline of all engineering memory</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ARCHITECTURE ─── -->
+  <section class="section section-arch" id="architecture">
+    <div class="container">
+      <p class="section-kicker">Architecture</p>
+      <h2 class="section-title">Layered monorepo</h2>
+      <div class="arch-diagram">
+<pre>
+              ┌──────────────┐
+              │  Future App  │
+              └──────┬───────┘
+                     │
+    ┌─────────────┐  │  ┌──────────────┐
+    │  <span class="a-cli">Ithos CLI</span>  │  │  │  <span class="a-mcp">MCP Server</span>  │
+    └──────┬──────┘  │  └──────┬───────┘
+           │         ▼         │
+           │   ┌───────────┐   │
+           └──►│   <span class="a-core">Core</span>    │◄──┘
+               └─────┬─────┘
+                     │
+                     ▼
+              ┌─────────────┐
+              │  <span class="a-fs">Local FS</span>   │
+              └─────────────┘
+</pre>
+      </div>
+      <div class="arch-packages">
+        <div class="arch-pkg">
+          <h4>ithos-core</h4>
+          <p>Domain logic: init, validate, record, search, export, timeline. Every consumer reuses this — zero duplication.</p>
+        </div>
+        <div class="arch-pkg">
+          <h4>ithos</h4>
+          <p>Thin CLI. Renders core output with colors and icons. Contains no business logic.</p>
+        </div>
+        <div class="arch-pkg">
+          <h4>ithos-mcp</h4>
+          <p>MCP stdio server. AI assistants call it to query and record memory in real-time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PRINCIPLES ─── -->
+  <section class="section section-principles" id="principles">
+    <div class="container">
+      <p class="section-kicker">Principles</p>
+      <div class="principles-list">
+        <div class="principle">
+          <span class="principle-num">01</span>
+          <div>
+            <h3>Memory First</h3>
+            <p>Everything exists to preserve engineering memory.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <span class="principle-num">02</span>
+          <div>
+            <h3>Local First</h3>
+            <p>No internet, no cloud. Your data lives in your repo.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <span class="principle-num">03</span>
+          <div>
+            <h3>Markdown Source of Truth</h3>
+            <p>Indexes and databases are secondary and always derived.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <span class="principle-num">04</span>
+          <div>
+            <h3>Git Native</h3>
+            <p>Merges and PR reviews are the synchronization mechanism.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <span class="principle-num">05</span>
+          <div>
+            <h3>AI Captures, Humans Understand</h3>
+            <p>AI handles the grunt work. Developers own the knowledge.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">ithos</span>
+          <p>The missing memory layer between software and the people who build it.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Project</h4>
+            <a href="https://github.com/kry5h/ithos" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.npmjs.com/package/ithos" target="_blank" rel="noopener">npm</a>
+            <a href="https://github.com/kry5h/ithos/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>
+          </div>
+          <div class="footer-col">
+            <h4>Docs</h4>
+            <a href="https://github.com/kry5h/ithos#quick-start" target="_blank" rel="noopener">Quick Start</a>
+            <a href="https://github.com/kry5h/ithos/blob/main/docs/SPEC.md" target="_blank" rel="noopener">Spec</a>
+            <a href="https://github.com/kry5h/ithos/blob/main/docs/CONTRIBUTING.md" target="_blank" rel="noopener">Contributing</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Built with engineering memory in mind.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
