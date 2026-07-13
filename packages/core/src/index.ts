@@ -8,6 +8,7 @@ export {
 export { recordArtifact } from "./artifact/record.js";
 export { searchMemory } from "./search/keyword.js";
 export { exportMemory } from "./export/index.js";
+export { generateTimeline } from "./timeline/generate.js";
 export {
   isArtifactType,
   ARTIFACT_TYPES,
@@ -17,5 +18,8 @@ export {
   type ValidationResult,
   type DoctorResult,
   type SearchResult,
-  type ExportResult
+  type ExportResult,
+  type TimelineEntry,
+  type TimelineOptions,
+  type TimelineResult
 } from "./artifact/types.js";

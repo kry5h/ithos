@@ -13,7 +13,7 @@ learned disappear into ephemeral chat interfaces and scattered threads.
 Ithos solves this by preserving **institutional memory**. It establishes a
 standardized, git-native, markdown-based memory layout at the root of your
 project: `.ithos/`. Through MCP, AI assistants can preserve institutional memory
-directly into your project’s `.ithos` directory—capturing engineering reasoning
+directly into your project's `.ithos` directory—capturing engineering reasoning
 without breaking your flow.
 
 ---
@@ -59,6 +59,8 @@ institutional memory explains the reasoning.
   so you don't repeat past experiments.
 - **Build a searchable memory:** Keep decisions, lessons, and sessions indexable
   and searchable.
+- **Understand a project in seconds:** Run `ithos timeline` to see the full
+  engineering history unfold chronologically — without opening a single file.
 
 ---
 
@@ -84,16 +86,34 @@ when solving a bug or refactoring code:
 The AI assistant can automatically use `search_memory` to locate and read
 relevant files.
 
+### 3. Reading the Timeline
+
+```bash
+ithos timeline
+```
+
+Renders every artifact across all categories, sorted chronologically. Each entry
+shows the type, title, a short summary extracted from the body, and a direct
+path to the source file. The output reads like the history of the project — not
+a list of files.
+
 ---
 
 ## Repository Structure
 
 ```
 .ithos/
-├── README.md           # Preserved memory overview for new AI agents & developers
-├── project.md          # Project context summary, technology stack, conventions
+├── README.md           # Memory overview for new AI agents & developers
+├── project.md          # Project context, technology stack, conventions
 ├── decisions/          # Significant engineering decisions (one file per decision)
+├── architecture/       # Architecture records and structural changes
+├── features/           # Feature records and capability additions
+├── patterns/           # Reusable patterns and conventions
 ├── lessons/            # Post-mortems, bug resolutions, and workflow lessons
+├── regressions/        # Regressions and the context around them
+├── defects/            # Defect records
+├── gaps/               # Known gaps and deferred work
+├── releases/           # Release notes and milestone records
 └── sessions/           # Developer session outcomes and accomplishments
 ```
 
@@ -136,6 +156,32 @@ Claude Desktop
 
 Restart your editor after saving the config.
 
+### 3. Read the timeline
+
+Once memory has accumulated, run:
+
+```bash
+ithos timeline
+```
+
+The output groups every artifact by date, shows a short preview, and links
+directly to the source file. It is designed to answer: _"What has happened in
+this project?"_
+
+---
+
+## CLI Commands
+
+| Command | Description |
+|---|---|
+| `ithos init` | Initialize the `.ithos/` directory structure |
+| `ithos validate` | Verify the repository structure matches the spec |
+| `ithos doctor` | Inspect your local setup and diagnose issues |
+| `ithos record` | Manually record a decision, lesson, session, or other artifact |
+| `ithos search <query>` | Search matching lines across all engineering memory |
+| `ithos export` | Concatenate and export the full memory directory to stdout |
+| `ithos timeline` | Render a chronological timeline of all engineering memory |
+
 ---
 
 ## Principles
@@ -175,7 +221,18 @@ Ithos is structured as a layered monorepo using npm workspaces:
 ```
 
 1.  **`ithos-core` (`packages/core`)**: The domain heart of Ithos. Performs
-    repository initialization, structure validation, file reading/writing, and
+    repository initialization, structure validation, file reading/writing,
+    frontmatter management, keyword search, memory export, and timeline
+    generation. All business logic lives here so that any future consumer — CLI,
+    MCP, dashboard, VS Code extension, or Obsidian plugin — can reuse it without
+    duplication.
+2.  **`ithos` (`packages/cli`)**: A thin terminal command interface wrapping the
+    core operations. Responsible only for rendering; contains no domain logic of
+    its own.
+3.  **`ithos-mcp` (`packages/mcp`)**: A Model Context Protocol stdio server that
+    permits AI coding assistants to automatically query and record decisions,
+    lessons, or session logs in real-time.
+ation, structure validation, file reading/writing, and
     frontmatter management.
 2.  **`ithos` (`packages/cli`)**: A thin terminal command interface wrapping the
     core operations (e.g., `ithos init`).
