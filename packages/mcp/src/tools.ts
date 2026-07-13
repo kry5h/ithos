@@ -1,6 +1,6 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import { readProjectContext, recordArtifact } from "@ithos/core";
+import { readProjectContext, recordArtifact } from "ithos-core";
 
 export function registerTools(server: McpServer): void {
   server.tool(

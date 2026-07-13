@@ -8,7 +8,7 @@ import {
   searchMemory,
   validateRepository,
   type ArtifactType
-} from "@ithos/core";
+} from "ithos-core";
 
 export function createCli(): Command {
   const program = new Command();

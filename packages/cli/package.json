@@ -1,5 +1,5 @@
 {
-  "name": "@ithos/cli",
+  "name": "ithos",
   "version": "0.1.0",
   "license": "MIT",
   "publishConfig": {
@@ -26,7 +26,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@ithos/core": "*",
+    "ithos-core": "*",
     "commander": "^14.0.0"
   }
 }

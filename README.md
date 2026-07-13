@@ -68,13 +68,13 @@ Ithos is structured as a layered monorepo using npm workspaces:
                   └─────────────┘
 ```
 
-1. **`@ithos/core` (Package: `packages/core`)**  
+1. **`ithos-core` (Package: `packages/core`)**  
    The domain heart of Ithos. Performs repository initialization, structure validation, file reading/writing operations, keyword search, compilation exports, and frontmatter management.
 
-2. **`@ithos/cli` (Package: `packages/cli`)**  
+2. **`ithos` (Package: `packages/cli`)**  
    A thin terminal command interface wrapping the core operations. Exposes commands like `ithos init`.
 
-3. **`@ithos/mcp` (Package: `packages/mcp`)**  
+3. **`ithos-mcp` (Package: `packages/mcp`)**  
    A Model Context Protocol stdio server that permits AI coding assistants (like Cursor, Claude Desktop, Copilot) to automatically query project context and record decisions, lessons, or session logs in real-time.
 
 ---
@@ -86,7 +86,7 @@ Ithos is structured as a layered monorepo using npm workspaces:
 To initialize Ithos in any repository, simply run:
 
 ```bash
-npx @ithos/cli init
+npx ithos init
 ```
 
 ### 2. Connect Your AI Assistant (MCP)
@@ -100,7 +100,7 @@ Example definition:
   "mcpServers": {
     "ithos": {
       "command": "npx",
-      "args": ["-y", "@ithos/mcp"]
+      "args": ["-y", "ithos-mcp"]
     }
   }
 }
