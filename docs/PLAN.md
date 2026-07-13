@@ -4,101 +4,76 @@
 
 This document tracks the implementation roadmap for Ithos.
 
-Unlike VISION.md and PRINCIPLES.md, this document is expected to change
-frequently.
+Unlike VISION.md and PRINCIPLES.md, this document is expected to change frequently.
 
 ---
 
-# Current Goal
+# Current Status
 
-Build the smallest possible version of Ithos that proves the core idea:
+**Phases 1–4 are complete and shipped.**
 
-> Engineering memory should be automatically captured, stored as markdown, and
-> easily searchable.
+Ithos is live on npm:
 
-Nothing else matters until this works.
+```bash
+npm install -g ithos        # CLI
+npm install -g ithos-mcp    # MCP server
+```
 
----
-
-# Phase 1 — Foundation
-
-## Repository
-
-- Setup monorepo
-- Configure TypeScript
-- Configure linting
-- Configure formatting
-- Setup CI
-- Create documentation
-
-Deliverable:
-
-A clean developer experience.
+The core loop works end-to-end: AI agents automatically record decisions, lessons, and session summaries into `.ithos/` as you code.
 
 ---
 
-# Phase 2 — CLI
+# Phase 1 — Foundation ✅
 
-Build the Ithos CLI.
-
-Initial commands:
-
-bash ithos init ithos doctor ithos validate ithos record ithos search ithos
-export
-
-Deliverable:
-
-A developer can initialize an Ithos repository and manage engineering memory
-locally.
+- Monorepo setup with npm workspaces
+- TypeScript configuration
+- Linting and formatting
+- CI pipeline
+- Core documentation
 
 ---
 
-# Phase 3 — Markdown Engine
+# Phase 2 — CLI ✅
 
-Implement the markdown engine.
+Commands shipped:
 
-Responsibilities:
-
-- Create files
-- Read files
-- Update files
-- Validate structure
-- Parse metadata
-- Link artifacts
-
-Deliverable:
-
-Reliable markdown operations.
+```bash
+ithos init
+ithos validate
+ithos doctor
+ithos record
+ithos search
+ithos export
+```
 
 ---
 
-# Phase 4 — MCP Server
+# Phase 3 — Markdown Engine ✅
 
-Build the MCP server.
+- File creation, reading, and validation
+- Frontmatter parsing and management
+- Artifact linking
+- Keyword search
+- Export to concatenated markdown
 
-Responsibilities:
+---
 
-- Expose tools to AI agents
-- Convert tool requests into markdown artifacts
-- Read project context
-- Search engineering memory
+# Phase 4 — MCP Server ✅
 
-The MCP server should contain descriptions that help AI agents decide when to
-use each tool.
+Tools shipped:
 
-Business logic should remain inside the CLI.
+- `get_project_context` — reads `.ithos/README.md` and `project.md`
+- `record_decision` — saves architectural decisions
+- `record_lesson` — captures development lessons
+- `record_session` — logs session summaries
 
-Deliverable:
-
-AI agents can naturally contribute to Ithos.
+Published as `ithos-mcp` on npm. Works with Cursor, Claude Desktop, and any MCP-compatible client.
 
 ---
 
 # Phase 5 — Dashboard
 
-Build a local dashboard.
-
-The dashboard should only read markdown.
+Build a local dashboard to browse engineering memory visually.
 
 Views:
 
@@ -111,40 +86,33 @@ Views:
 
 Deliverable:
 
-Developers can browse engineering memory visually.
+Developers can browse engineering memory without opening individual markdown files.
 
 ---
 
 # Phase 6 — Search
 
-Implement search.
+Extend search beyond keyword matching.
 
-Initial search:
-
-- keyword search
-- tag search
-
-Future:
-
-- semantic search
+- Tag-based search
+- Semantic search
 - AI-assisted search
 
 Deliverable:
 
-Developers can quickly find engineering knowledge.
+Developers can quickly surface relevant engineering knowledge across large repositories.
 
 ---
 
 # Phase 7 — Publishing
 
-Allow developers to publish selected engineering memory.
+Allow developers to selectively publish engineering memory.
 
-Examples:
+Options:
 
-- Markdown
+- Markdown export
 - HTML
 - GitHub Pages
-- Blog
 - Future Ithos Community
 
 Publishing should always require explicit user approval.
@@ -155,29 +123,27 @@ Publishing should always require explicit user approval.
 
 The MVP is complete when:
 
-- A repository can be initialized.
-- AI can record engineering memory.
-- Memory is stored as markdown.
-- Developers can search previous decisions.
-- Developers would choose to use Ithos on their next project.
+- [x] A repository can be initialized.
+- [x] AI can record engineering memory via MCP.
+- [x] Memory is stored as git-native markdown.
+- [x] Developers can search previous decisions.
+- [x] Packages are published to npm (`ithos`, `ithos-core`, `ithos-mcp`).
+- [ ] Developers can browse memory through a visual dashboard.
 
 ---
 
-# Out of Scope
+# Out of Scope (for now)
 
 Do NOT build yet:
 
-- Cloud
+- Cloud sync
 - Authentication
 - Teams
 - Billing
 - Notifications
 - Mobile apps
 - Enterprise features
-- Social network
-- Likes
-- Comments
-- Followers
+- Social features (likes, comments, followers)
 - AI-generated engagement
 
 These are future concerns.

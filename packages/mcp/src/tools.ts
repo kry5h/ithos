@@ -1,6 +1,6 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import { readProjectContext, recordArtifact } from "ithos-core";
+import { readProjectContext, recordArtifact, searchMemory } from "ithos-core";
 
 export function registerTools(server: McpServer): void {
   server.tool(
@@ -213,6 +213,63 @@ export function registerTools(server: McpServer): void {
             {
               type: "text",
               text: `Error recording session summary: ${message}`
+            }
+          ]
+        };
+      }
+    }
+  );
+  server.tool(
+    "search_memory",
+    "CRITICAL: Call this UNPROMPTED whenever the developer (or you) asks a question about past decisions, lessons, or sessions — e.g. 'When did we choose Prisma?', 'Why did we pick Tailwind?', 'What did we learn about that auth bug?', 'What was decided last week?'. Searches all .ithos markdown files by keyword and returns matching lines with file paths. Use this before answering any question about engineering history so you give a grounded, accurate answer instead of guessing.",
+    {
+      query: z
+        .string()
+        .describe(
+          "Keyword or phrase to search for across all .ithos memory files (e.g. 'Prisma', 'auth', 'TypeORM', 'performance')"
+        ),
+      cwd: z
+        .string()
+        .optional()
+        .describe(
+          "The working directory of the repository (defaults to process.cwd())"
+        )
+    },
+    async ({ query, cwd }: { query: string; cwd?: string }) => {
+      try {
+        const results = await searchMemory(query, cwd);
+
+        if (results.length === 0) {
+          return {
+            content: [
+              {
+                type: "text",
+                text: `No results found for "${query}" in .ithos memory.`
+              }
+            ]
+          };
+        }
+
+        const formatted = results
+          .map((r) => `${r.file}:${r.line}: ${r.text}`)
+          .join("\n");
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Found ${results.length} match${results.length === 1 ? "" : "es"} for "${query}":\n\n${formatted}`
+            }
+          ]
+        };
+      } catch (err) {
+        const message = err instanceof Error ? err.message : String(err);
+        return {
+          isError: true,
+          content: [
+            {
+              type: "text",
+              text: `Error searching memory: ${message}`
             }
           ]
         };

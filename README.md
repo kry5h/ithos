@@ -82,17 +82,6 @@ Then add it to your MCP client config.
 }
 ```
 
-> **nvm users:** The bare `ithos-mcp` command may not work since Cursor doesn't load your shell's PATH. Run `which ithos-mcp` in your terminal and use the full path instead:
-> ```json
-> {
->   "mcpServers": {
->     "ithos": {
->       "command": "/your/full/path/to/ithos-mcp"
->     }
->   }
-> }
-> ```
-
 Restart your editor after saving the config.
 
 ### 3. Start coding — Ithos handles the rest
@@ -110,6 +99,7 @@ No prompting required.
 - **`record_decision`**: Saves a chosen path, trade-offs, and alternatives.
 - **`record_lesson`**: Captures a development lesson and bug regression preventions.
 - **`record_session`**: Logs high-level goals met from the coding session.
+- **`search_memory`**: Searches through decisions, lessons, and sessions by keyword.
 
 ---
 
