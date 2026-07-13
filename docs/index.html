@@ -57,7 +57,11 @@
         <a href="https://github.com/kry5h/ithos" class="btn btn-ghost" target="_blank" rel="noopener">View on GitHub</a>
       </div>
       <div class="hero-install">
-        <code>npm install -g ithos</code>
+        <code>npm install -g ithos ithos-mcp</code>
+        <button class="copy-btn" data-copy="npm install -g ithos ithos-mcp" aria-label="Copy to clipboard">
+          <svg class="copy-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><polyline points="20 6 9 17 4 12"/></svg>
+        </button>
       </div>
     </div>
   </header>
@@ -243,12 +247,12 @@
         <div class="qs-step">
           <h3><span class="qs-num">1</span> Initialize</h3>
           <div class="qs-code"><pre><span class="t-prompt">$</span> npm install -g ithos
-<span class="t-prompt">$</span> ithos init</pre></div>
+<span class="t-prompt">$</span> ithos init</pre><button class="copy-btn" data-copy="npm install -g ithos && ithos init" aria-label="Copy to clipboard"><svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg><svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><polyline points="20 6 9 17 4 12"/></svg></button></div>
           <p>Creates the <code>.ithos/</code> structure in your project root.</p>
         </div>
         <div class="qs-step">
           <h3><span class="qs-num">2</span> Connect MCP</h3>
-          <div class="qs-code"><pre><span class="t-prompt">$</span> npm install -g ithos-mcp</pre></div>
+          <div class="qs-code"><pre><span class="t-prompt">$</span> npm install -g ithos-mcp</pre><button class="copy-btn" data-copy="npm install -g ithos-mcp" aria-label="Copy to clipboard"><svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg><svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><polyline points="20 6 9 17 4 12"/></svg></button></div>
           <p>Add to your AI client config and restart your editor.</p>
           <div class="qs-code qs-code-json"><pre>{
   "mcpServers": {
@@ -256,11 +260,11 @@
       "command": "ithos-mcp"
     }
   }
-}</pre></div>
+}</pre><button class="copy-btn" data-copy='{"mcpServers":{"ithos":{"command":"ithos-mcp"}}}' aria-label="Copy to clipboard"><svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg><svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><polyline points="20 6 9 17 4 12"/></svg></button></div>
         </div>
         <div class="qs-step">
           <h3><span class="qs-num">3</span> Read the Timeline</h3>
-          <div class="qs-code"><pre><span class="t-prompt">$</span> ithos timeline</pre></div>
+          <div class="qs-code"><pre><span class="t-prompt">$</span> ithos timeline</pre><button class="copy-btn" data-copy="ithos timeline" aria-label="Copy to clipboard"><svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg><svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><polyline points="20 6 9 17 4 12"/></svg></button></div>
           <p>Watch the project's engineering memory unfold.</p>
         </div>
       </div>
