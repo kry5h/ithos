@@ -93,6 +93,17 @@ Your AI assistant will now automatically:
 
 No prompting required.
 
+### 4. Query engineering memory
+
+Any developer (or the AI itself) can query past institutional knowledge:
+
+> "When did we choose Prisma and why?"
+> "What did we learn about the auth bug?"
+
+The AI assistant will automatically use `search_memory` to locate and read the relevant `.ithos` files.
+
+![Ithos in action — AI recalling a past decision](assets/search-demo.png)
+
 #### Exposed MCP Tools
 
 - **`get_project_context`**: Reads repo README and project metadata.

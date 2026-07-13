@@ -66,6 +66,7 @@ Tools shipped:
 - `record_decision` — saves architectural decisions
 - `record_lesson` — captures development lessons
 - `record_session` — logs session summaries
+- `search_memory` — searches engineering memory by keyword
 
 Published as `ithos-mcp` on npm. Works with Cursor, Claude Desktop, and any MCP-compatible client.
 

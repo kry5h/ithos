@@ -284,7 +284,7 @@ mature than the implementation actually is.
 
 ## Decision
 
-Ithos will start as an npm workspaces monorepo with a single `@ithos/core`
+Ithos will start as an npm workspaces monorepo with a single `ithos-core`
 package.
 
 Future packages should be added only when their roadmap phase begins.
@@ -297,7 +297,7 @@ type-aware linting. TypeScript itself remains strict through `tsc`.
 npm workspaces keep the foundation simple, local, open and familiar while still
 leaving room for separate CLI, MCP and dashboard packages later.
 
-Starting with only `@ithos/core` avoids placeholder architecture and keeps Phase
+Starting with only `ithos-core` avoids placeholder architecture and keeps Phase
 1 focused on developer experience.
 
 Skipping type-aware linting in Phase 1 avoids extra configuration complexity
