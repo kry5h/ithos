@@ -56,13 +56,17 @@ test("recordArtifact creates a markdown artifact without overwriting", async () 
       type: "decisions",
       title: "Use Markdown",
       body: "Markdown stays readable in Git.",
-      date: new Date("2026-07-02T12:00:00.000Z")
+      date: new Date("2026-07-02T12:00:00.000Z"),
+      tags: ["git", "markdown"],
+      related: ["DEC-20260701-something"]
     });
 
     assert.equal(file, ".ithos/decisions/use-markdown.md");
 
     const content = await readFile(path.join(cwd, file), "utf8");
     assert.match(content, /type: decisions/);
+    assert.match(content, /tags: \["git","markdown"\]/);
+    assert.match(content, /related: \["DEC-20260701-something"\]/);
     assert.match(content, /# Use Markdown/);
     assert.match(content, /Markdown stays readable in Git\./);
 
@@ -129,7 +133,7 @@ test("searchMemory returns matching markdown lines", async () => {
       },
       {
         file: ".ithos/lessons/capture-signal.md",
-        line: 12,
+        line: 13,
         text: "Capture signal, not exhaust."
       }
     ]);

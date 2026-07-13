@@ -54,6 +54,14 @@ export function registerTools(server: McpServer): void {
         .describe(
           "Complete body detailing: 1. Context (why this became a decision), 2. Alternatives Considered, 3. The Decision, 4. Trade-offs/Consequences (pros and cons)"
         ),
+      tags: z
+        .array(z.string())
+        .optional()
+        .describe("Optional tags to categorize this decision (e.g., ['auth', 'database'])"),
+      related: z
+        .array(z.string())
+        .optional()
+        .describe("Optional related artifact IDs or file paths this links to (e.g., ['[[DEC-20260713000500-local-date]]'])"),
       cwd: z
         .string()
         .optional()
@@ -64,10 +72,14 @@ export function registerTools(server: McpServer): void {
     async ({
       title,
       body,
+      tags,
+      related,
       cwd
     }: {
       title: string;
       body: string;
+      tags?: string[];
+      related?: string[];
       cwd?: string;
     }) => {
       try {
@@ -75,6 +87,8 @@ export function registerTools(server: McpServer): void {
           type: "decisions",
           title,
           body,
+          tags,
+          related,
           cwd
         });
         return {
@@ -114,6 +128,14 @@ export function registerTools(server: McpServer): void {
         .describe(
           "Complete body detailing: 1. Context (what went wrong/what was done), 2. The lesson learned, 3. Prevention (how future engineers can avoid this or use it to compile code faster)"
         ),
+      tags: z
+        .array(z.string())
+        .optional()
+        .describe("Optional tags to categorize this lesson (e.g., ['auth', 'database'])"),
+      related: z
+        .array(z.string())
+        .optional()
+        .describe("Optional related artifact IDs or file paths this links to (e.g., ['[[DEC-20260713000500-local-date]]'])"),
       cwd: z
         .string()
         .optional()
@@ -124,10 +146,14 @@ export function registerTools(server: McpServer): void {
     async ({
       title,
       body,
+      tags,
+      related,
       cwd
     }: {
       title: string;
       body: string;
+      tags?: string[];
+      related?: string[];
       cwd?: string;
     }) => {
       try {
@@ -135,6 +161,8 @@ export function registerTools(server: McpServer): void {
           type: "lessons",
           title,
           body,
+          tags,
+          related,
           cwd
         });
         return {
@@ -174,6 +202,14 @@ export function registerTools(server: McpServer): void {
         .describe(
           "Complete body detailing: 1. Objectives (what was planned), 2. Accomplishments (what was done), 3. Next steps / Open items (what is left for tomorrow)"
         ),
+      tags: z
+        .array(z.string())
+        .optional()
+        .describe("Optional tags to categorize this session (e.g., ['auth', 'database'])"),
+      related: z
+        .array(z.string())
+        .optional()
+        .describe("Optional related artifact IDs or file paths this links to (e.g., ['[[DEC-20260713000500-local-date]]'])"),
       cwd: z
         .string()
         .optional()
@@ -184,10 +220,14 @@ export function registerTools(server: McpServer): void {
     async ({
       title,
       body,
+      tags,
+      related,
       cwd
     }: {
       title: string;
       body: string;
+      tags?: string[];
+      related?: string[];
       cwd?: string;
     }) => {
       try {
@@ -195,6 +235,8 @@ export function registerTools(server: McpServer): void {
           type: "sessions",
           title,
           body,
+          tags,
+          related,
           cwd
         });
         return {

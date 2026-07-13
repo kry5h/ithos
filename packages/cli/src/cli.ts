@@ -60,7 +60,15 @@ export function createCli(): Command {
     .requiredOption("-t, --type <type>", "artifact type")
     .requiredOption("--title <title>", "artifact title")
     .option("-b, --body <body>", "artifact body")
-    .action(async (options: { type: string; title: string; body?: string }) => {
+    .option("--tags <tags>", "comma-separated tags")
+    .option("--related <related>", "comma-separated related artifact IDs or file paths")
+    .action(async (options: {
+      type: string;
+      title: string;
+      body?: string;
+      tags?: string;
+      related?: string;
+    }) => {
       if (!isArtifactType(options.type)) {
         console.error(`Unsupported artifact type: ${options.type}`);
         process.exitCode = 1;
@@ -74,10 +82,15 @@ export function createCli(): Command {
         return;
       }
 
+      const tags = options.tags ? options.tags.split(",").map(t => t.trim()) : undefined;
+      const related = options.related ? options.related.split(",").map(r => r.trim()) : undefined;
+
       const file = await recordArtifact({
         type: options.type as ArtifactType,
         title: options.title,
-        body
+        body,
+        tags,
+        related
       });
       console.log(`Recorded ${file}`);
     });

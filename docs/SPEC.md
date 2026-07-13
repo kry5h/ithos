@@ -284,8 +284,17 @@ Structured metadata should use YAML frontmatter.
 
 Example:
 
-yaml --- id: DEC-0001 type: decision status: accepted created: 2026-07-03
-updated: 2026-07-03 tags: - architecture - backend ---
+```yaml
+---
+id: DEC-20260713171900-adopt-obsidian-style-linking
+type: decisions
+status: draft
+created: 2026-07-13
+updated: 2026-07-13
+tags: ["architecture", "mcp"]
+related: ["[[DEC-20260713213433-use-prisma-over-typeorm]]"]
+---
+```
 
 The schema will evolve over time.
 
@@ -295,7 +304,7 @@ The schema will evolve over time.
 
 Use standard markdown links whenever possible.
 
-Future versions may support wiki-style links.
+We support Obsidian-style wiki links (e.g., `[[DEC-20260713213433-use-prisma-over-typeorm]]`) or IDs inside the frontmatter `related` array to weave a traversable knowledge graph.
 
 Cross-reference related artifacts frequently.
 

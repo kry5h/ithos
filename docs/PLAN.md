@@ -63,9 +63,9 @@ ithos export
 Tools shipped:
 
 - `get_project_context` — reads `.ithos/README.md` and `project.md`
-- `record_decision` — saves architectural decisions
-- `record_lesson` — captures development lessons
-- `record_session` — logs session summaries
+- `record_decision` — saves architectural decisions (supports optional `tags` and `related` links)
+- `record_lesson` — captures development lessons (supports optional `tags` and `related` links)
+- `record_session` — logs session summaries (supports optional `tags` and `related` links)
 - `search_memory` — searches engineering memory by keyword
 
 Published as `ithos-mcp` on npm. Works with Cursor, Claude Desktop, and any MCP-compatible client.

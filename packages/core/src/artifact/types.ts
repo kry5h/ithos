@@ -16,6 +16,8 @@ export type RecordInput = {
   body: string;
   cwd?: string;
   date?: Date;
+  tags?: string[];
+  related?: string[];
 };
 
 export type InitResult = {
